@@ -5,7 +5,7 @@ import rootReducer from "./reducers"
 const initialState = {}
 const middleware = [thunk]
 
-let createStore
+let store
 
 const ReactReduxDevTools =
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
