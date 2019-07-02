@@ -20,3 +20,16 @@ export const createUser = (user, history) => async dispatch => {
         })
     }
 }
+
+export const login = LoginRequest => async dispatch => {
+    try {
+        const res = await axios.post(COURSE_API_URL + "/api/v1/users/login", LoginRequest)
+        const { token } = res.data
+        localStorage.setItem("jwtToken", token)
+    } catch (error) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: error.response.data
+        })
+    }
+}
