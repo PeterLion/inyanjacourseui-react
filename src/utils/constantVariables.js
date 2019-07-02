@@ -1,0 +1,1 @@
+export const COURSE_API_URL = "https://inycore.herokuapp.com"
