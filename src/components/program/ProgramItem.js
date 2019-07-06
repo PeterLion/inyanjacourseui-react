@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import { deleteProgram } from "../../actions/programActions"
 import PropTypes from 'prop-types';
 
-class Program extends Component {
+class ProgramItem extends Component {
     onDeleteClick = id => {
         this.props.deleteProgram(id)
     }
@@ -26,8 +26,8 @@ class Program extends Component {
     }
 }
 
-Program.propTypes = {
+ProgramItem.propTypes = {
     deleteProgram: PropTypes.func.isRequired
 }
 
-export default connect(null, { deleteProgram })(Program);
+export default connect(null, { deleteProgram })(ProgramItem);

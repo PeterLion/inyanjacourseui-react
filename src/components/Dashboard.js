@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
-import Program from './program/Program';
+import ProgramItem from './program/ProgramItem';
 import { getPrograms } from "../actions/programActions"
 import PropTypes from 'prop-types'
 import MessageItem from './message/messageItem';
@@ -28,7 +28,7 @@ class Dashboard extends Component {
                 <div className="row mb-3">
                     {
                         programs.map(program => (
-                            <Program key={program.id} program={program} />
+                            <ProgramItem key={program.id} program={program} />
                         ))
                     }
                 </div>
