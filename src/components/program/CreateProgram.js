@@ -30,12 +30,20 @@ class CreateProgram extends Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
-                    <div><input type="text" name="name" value={this.state.name} onChange={this.onChange} /></div>
-                    <div><textarea name="description" value={this.state.description} onChange={this.onChange}></textarea></div>
-                    <div><input type="submit" value="Create Program" /></div>
-                </form>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 sm-12 lg-6">
+                        <form onSubmit={this.onSubmit}>
+                            <div className="form-group">
+                                <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.onChange} /></div>
+                            <div className="form-group">
+                                <textarea name="description" className="form-control" value={this.state.description} onChange={this.onChange}></textarea></div>
+                            <div className="form-group">
+                                <input type="submit" className="btn btn-primary" value="Create Program" /></div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         )
     }

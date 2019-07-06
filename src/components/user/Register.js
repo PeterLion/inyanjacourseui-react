@@ -39,21 +39,26 @@ class Register extends Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
-                    <div>
-                        <input type="text" name="name" value={this.state.name} onChange={this.onChange} />
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
+                        <form onSubmit={this.onSubmit}>
+                            <div className="form-group">
+                                <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.onChange} />
+                            </div>
+                            <div className="form-group">
+                                <input type="text" className="form-control" name="email" value={this.state.email} onChange={this.onChange} />
+                            </div>
+                            <div className="form-group">
+                                <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.onChange} />
+                            </div>
+                            <div className="form-group">
+                                <input type="submit" className="btn btn-primary" value="Register" />
+                            </div>
+                        </form>
                     </div>
-                    <div>
-                        <input type="text" name="email" value={this.state.email} onChange={this.onChange} />
-                    </div>
-                    <div>
-                        <input type="password" name="password" value={this.state.password} onChange={this.onChange} />
-                    </div>
-                    <div>
-                        <input type="submit" value="Register" />
-                    </div>
-                </form>
+                </div>
+
             </div>
         )
     }
