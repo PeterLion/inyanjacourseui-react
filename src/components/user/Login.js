@@ -17,7 +17,16 @@ class Login extends Component {
         this.onSubmit = this.onSubmit.bind(this)
     }
 
+    componentDidMount() {
+        if (this.props.user.validToken) {
+            this.props.history.push("/dashboard")
+        }
+    }
+
     componentWillReceiveProps(nextProps) {
+        if (nextProps.user.validToken) {
+            this.props.history.push("/dashboard")
+        }
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors })
         }
@@ -54,11 +63,13 @@ class Login extends Component {
 
 Login.propTypes = {
     login: PropTypes.func.isRequired,
-    errors: PropTypes.object.isRequired
+    errors: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    errors: state.errors
+    errors: state.errors,
+    user: state.user
 })
 
 

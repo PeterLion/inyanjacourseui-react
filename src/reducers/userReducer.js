@@ -9,7 +9,7 @@ const tokenIsThere = payload => {
     if (payload) {
         return true
     }
-    return false;
+    else { return false; }
 }
 export default function (state = initialState, action) {
     switch (action.type) {
