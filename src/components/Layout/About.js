@@ -77,7 +77,7 @@ class About extends Component {
                 <section id="signup">
                     <div className="container">
                         <h2>Get our handcrafted newsletter</h2>
-                        <p className="lead mt-2">Seriously, we'll send you real paper in the mail. We don't do email.</p>
+                        <p className="lead">Seriously, we'll send you real paper in the mail. We don't do email.</p>
                         <div className="row">
                             <div className="col-sm-8 offset-2">
                                 <form>
