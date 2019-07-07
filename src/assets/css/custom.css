@@ -88,10 +88,6 @@ footer {
     font-family: Georgia, Times, serif;
 }
 
-footer a {
-    color: hotpink;
-}
-
 /* Media Queries */
 
 @media only screen and ( max-width : 568px ) {
@@ -102,6 +98,10 @@ footer a {
         padding: 20px;
     }
     
+}
+
+.course-card{
+    width: 5px !important;
 }
 
 

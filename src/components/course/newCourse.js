@@ -4,7 +4,7 @@ import icon from "../../images/project_icon.jpg"
 class newCourse extends Component {
     render() {
         return (
-            <div className="card col-md-3">
+            <div className="card course-card col-md-3 p-1">
                 <img src={icon} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>

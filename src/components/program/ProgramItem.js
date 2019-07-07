@@ -12,7 +12,7 @@ class ProgramItem extends Component {
     render() {
         const { program } = this.props
         return (
-            <div className="card col-md-3">
+            <div className="card col-md-3 p-1">
                 <img src={project_icon} className="card-img-top" alt="..."></img>
                 <div className="card-body">
                     <h5 className="card-title">{program.name}</h5>

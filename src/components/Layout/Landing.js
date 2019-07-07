@@ -16,7 +16,7 @@ class Landing extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row mb-3">
                     <NewCourses />
                     <NewCourses />
                     <NewCourses />
