@@ -51,22 +51,22 @@ class About extends Component {
                         <h2>Meet our team</h2>
                         <div className="row">
                             <div className="col-sm-3">
-                                <img src={jane} alt="Woman's face" className="img-circle" />
+                                <img src={jane} alt="Woman's face" className="rounded-circle" />
                                 <h4>Jane Doe</h4>
                                 <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                             </div>
                             <div className="col-sm-3">
-                                <img src={john} alt="Man's face" className="img-circle" />
+                                <img src={john} alt="Man's face" className="rounded-circle" />
                                 <h4>John Doe</h4>
                                 <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                             </div>
                             <div className="col-sm-3">
-                                <img src={jenny} alt="Woman's face" className="img-circle" />
+                                <img src={jenny} alt="Woman's face" className="rounded-circle mx-auto d-block" />
                                 <h4>Jenny Doe</h4>
                                 <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                             </div>
                             <div className="col-sm-3">
-                                <img src={jim} alt="Man's face" className="img-circle" />
+                                <img src={jim} alt="Man's face" className="rounded-circle mx-auto d-block" />
                                 <h4>Jim Doe</h4>
                                 <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                             </div>
