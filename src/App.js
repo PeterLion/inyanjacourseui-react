@@ -18,6 +18,7 @@ import CreateProgram from "./components/program/CreateProgram"
 import UpdateProgram from './components/program/UpdateProgram';
 import Landing from "./components/Layout/Landing"
 import About from "./components/Layout/About"
+import Footer from './components/Layout/Footer';
 
 const jwtToken = localStorage.jwtToken;
 
@@ -47,6 +48,7 @@ function App() {
             <SecuredRoute exact path="/program" component={CreateProgram} />
             <SecuredRoute exact path="/updateProgram/:id" component={UpdateProgram} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     </Provider>

@@ -92,10 +92,6 @@ class About extends Component {
                         </div>
                     </div>
                 </section>
-
-                <footer>
-                    crafted with &hearts; in Rwanda by <a href="http://inyanja.com">Inyanja Space</a>
-                </footer>
             </div>
         )
     }
