@@ -47,7 +47,10 @@ class Login extends Component {
         const { errors } = this.state
         return (
             <div className="container">
-                <div className="row">
+                <div className="page-header">
+                    <p className="lead">Welcome</p>
+                </div>
+                <div className="row d-flex justify-content-center">
                     <div className="col-md-6">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
@@ -58,7 +61,7 @@ class Login extends Component {
                             </div>
                             <div className="form-group">
                                 <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.onChange} /></div>
-                            <div className="form-group">
+                            <div className="form-group m-auto">
                                 <input className="btn btn-primary" type="submit" value="Login" /></div>
                         </form>
                     </div>

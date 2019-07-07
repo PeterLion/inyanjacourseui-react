@@ -20,11 +20,11 @@ class Dashboard extends Component {
         }
         return (
             <div className="container">
-
-                {messageComponent}
-                <Link to="/program">
+                <p className="lead"><Link to="/program">
                     Create Program
-                </Link>
+                </Link></p>
+                {messageComponent}
+
                 <div className="row mb-3">
                     {
                         programs.map(program => (

@@ -40,7 +40,10 @@ class Register extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row">
+                <div className="page-header">
+                    <p className="lead">Welcome</p>
+                </div>
+                <div className="row d-flex justify-content-center">
                     <div className="col-md-6">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">

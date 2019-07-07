@@ -19,6 +19,7 @@ class Header extends Component {
         )
         const userIsNotAuthenticated = (
             <ul className="navbar-nav">
+                <li className="nav-item mr-3"><Link to="/about-us">About Us</Link></li>
                 <li className="nav-item mr-3"><Link to="/login">Sign In</Link></li>
                 <li className="nav-item"><Link to="/register">Sign Up</Link></li>
             </ul>

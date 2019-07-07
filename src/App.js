@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from "react-redux"
 import './App.css';
+import "./assets/css/custom.css"
 import store from "./store"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Register from "./components/user/Register"
@@ -16,6 +17,7 @@ import Header from "./components/Layout/Header"
 import CreateProgram from "./components/program/CreateProgram"
 import UpdateProgram from './components/program/UpdateProgram';
 import Landing from "./components/Layout/Landing"
+import About from "./components/Layout/About"
 
 const jwtToken = localStorage.jwtToken;
 
@@ -39,6 +41,7 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/about-us" component={About} />
           <Switch>
             <SecuredRoute exact path="/dashboard" component={Dashboard} />
             <SecuredRoute exact path="/program" component={CreateProgram} />
