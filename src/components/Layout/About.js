@@ -79,7 +79,7 @@ class About extends Component {
                         <h2>Get our handcrafted newsletter</h2>
                         <p className="lead mt-2">Seriously, we'll send you real paper in the mail. We don't do email.</p>
                         <div className="row">
-                            <div className="col-sm-8 col-sm-offset-2">
+                            <div className="col-sm-8 offset-2">
                                 <form>
                                     <div className="input-group">
                                         <input type="text" className="form-control input-lg" placeholder="Put your real address in here..." />
