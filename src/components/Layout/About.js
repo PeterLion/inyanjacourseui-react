@@ -20,26 +20,26 @@ class About extends Component {
                 <section className="testimonial">
                     <div className="container">
                         <blockquote>
-                            &ldquo; I never realized how uncool I was before. Hipstrify.io lovingly crafted me into shape, complete with a skin-fade, fresh denim &amp; a moustache &mdash; not only were they late, but they were overbudget. Highly recommended! &rdquo;
+                            &ldquo; I never realized how uncool I was before. Inyanja lovingly crafted me into shape, complete with a skin-fade, fresh denim &amp; a moustache &mdash; not only were they late, but they were overbudget. Highly recommended! &rdquo;
                 <cite>&mdash; A Happy Client</cite>
                         </blockquote>
                     </div>
                 </section>
 
                 <section id="why-us">
-                    <h2>Why Hipstrify.io?</h2>
+                    <h2>Why Inyanja Space?</h2>
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-4">
-                                <h3>Artisanal</h3>
+                                <h3>Get Served</h3>
                                 <p>Squid synth Marfa, fashion axe readymade whatever four loko aesthetic tote bag tilde. Mustache try-hard skateboard blog, umami ugh gentrify chia trust fund whatever. Church-key leggings small batch Etsy, taxidermy VHS meggings deep v slow-carb 8-bit blog.</p>
                             </div>
                             <div className="col-sm-4">
-                                <h3>Readymade</h3>
+                                <h3>Get Informed</h3>
                                 <p>Squid synth Marfa, fashion axe readymade whatever four loko aesthetic tote bag tilde. Mustache try-hard skateboard blog, umami ugh gentrify chia trust fund whatever. Church-key leggings small batch Etsy, taxidermy VHS meggings deep v slow-carb 8-bit blog.</p>
                             </div>
                             <div className="col-sm-4">
-                                <h3>Small Batches</h3>
+                                <h3>Get Educated</h3>
                                 <p>Squid synth Marfa, fashion axe readymade whatever four loko aesthetic tote bag tilde. Mustache try-hard skateboard blog, umami ugh gentrify chia trust fund whatever. Church-key leggings small batch Etsy, taxidermy VHS meggings deep v slow-carb 8-bit blog.</p>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ class About extends Component {
                 </section>
 
                 <footer>
-                    crafted with &hearts; in calgary by <a href="http://bradhussey.ca">brad</a>
+                    crafted with &hearts; in Rwanda by <a href="http://inyanja.com">Inyanja Space</a>
                 </footer>
             </div>
         )
