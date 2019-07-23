@@ -2,7 +2,7 @@ import { GET_COURSES } from "../actions/types"
 
 const initialState = {
     course: {},
-    ccourses: []
+    courses: []
 }
 
 export default function (state = initialState, action) {
