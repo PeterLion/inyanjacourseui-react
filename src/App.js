@@ -24,6 +24,8 @@ import Footer from './components/Layout/Footer';
 import Topics from './components/topic/Topics';
 import Topic from './components/topic/Topic';
 import AddCourse from './components/topic/AddCourse';
+import Courses from './components/course/Courses';
+import Programs from './components/program/Programs';
 
 const jwtToken = localStorage.jwtToken;
 
@@ -51,12 +53,14 @@ function App() {
           <Switch>
             <SecuredRoute exact path="/dashboard" component={Dashboard} />
             <SecuredRoute exact path="/program" component={CreateProgram} />
+            <SecuredRoute exact path="/programs" component={Programs} />
             <SecuredRoute exact path="/program/:id" component={Program} />
             <SecuredRoute exact path="/updateProgram/:id" component={UpdateProgram} />
             <SecuredRoute exact path="/topics" component={Topics} />
             <SecuredRoute exact path="/topics/:id" component={Topic} />
             <SecuredRoute exact path="/program/:id/addTopic" component={AddTopic} />
             <SecuredRoute exact path="/topics/:id/addCourse" component={AddCourse} />
+            <SecuredRoute exact path="/courses" component={Courses} />
           </Switch>
           <Footer />
         </div>

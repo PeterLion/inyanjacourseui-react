@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_ERRORS, SET_MESSAGE, GET_TOPICS, GET_TOPIC } from "./types"
+import { GET_ERRORS, SET_MESSAGE, GET_TOPICS, GET_TOPIC, PUBLIC_GET_TOPICS } from "./types"
 import { COURSE_API_URL } from "../utils/constantVariables"
 
 export const createTopic = (id, Topic, history) => async dispatch => {
@@ -36,4 +36,12 @@ export const getTopic = (id, history) => async dispatch => {
     } catch (error) {
         history.push("/dashboard")
     }
+}
+
+export const getPublicTopics = () => async dispatch => {
+    const res = await axios.get(COURSE_API_URL + "/api/v1/public/topics")
+    dispatch({
+        type: PUBLIC_GET_TOPICS,
+        payload: res.data
+    })
 }

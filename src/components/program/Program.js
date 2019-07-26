@@ -2,26 +2,51 @@ import React, { Component } from 'react'
 import { connect } from "react-redux"
 import PropTypes from 'prop-types';
 import { getProgram } from "../../actions/programActions"
-import { getTopics } from "../../actions/topicActions"
 import { Link } from "react-router-dom"
 import MessageItem from "../message/messageItem"
 
 class Program extends Component {
-    constructor() {
-        super()
-    }
     componentDidMount() {
         const { id } = this.props.match.params
         this.props.getProgram(id, this.props.history)
-        this.props.getTopics()
     }
     render() {
         const { program } = this.props
-        const { topics } = this.props.topic
         const { message } = this.props.message
+        const { Topics } = program
         let messageComponent;
         if (message) {
             messageComponent = (<MessageItem />)
+        }
+        let topics;
+        if (Topics && Topics.length != 0) {
+            topics = (
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {Topics && Topics.map(topic => (
+                            <tr key={topic.id}>
+                                <td>{topic.name}</td>
+                                <td>{topic.description}</td>
+                                <td><Link className="btn btn-primary md" to={`/topics/${topic.id}`}>View</Link></td>
+                            </tr>
+                        ))}
+
+                    </tbody>
+                </table>
+            )
+        } else {
+            topics = (
+                <div>
+                    <p>No topic found in this in {program.name}</p> <br />
+                </div>
+            )
         }
         return (
             <div className="container">
@@ -37,25 +62,7 @@ class Program extends Component {
                 <div className="row">
                     <p className="lead">Topics covered in this program.</p>
                     <div className="col-sm-12 col-md-12 col-lg-12">
-                        <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {topics.map(topic => (
-                                    <tr key={topic.id}>
-                                        <td>{topic.name}</td>
-                                        <td>{topic.description}</td>
-                                        <td><Link className="btn btn-primary md" to={`/topics/${topic.id}`}>View</Link></td>
-                                    </tr>
-                                ))}
-
-                            </tbody>
-                        </table>
+                        {topics}
                     </div>
                 </div>
 
@@ -67,11 +74,10 @@ class Program extends Component {
 Program.propTyps = {
     getProgram: PropTypes.func.isRequired,
     program: PropTypes.object.isRequired,
-    getTopics: PropTypes.func.isRequired
+    Topics: PropTypes.array
 }
 const mapStateToProps = state => ({
     program: state.program.program,
-    topic: state.topic,
     message: state.message.message
 })
-export default connect(mapStateToProps, { getProgram, getTopics })(Program);
+export default connect(mapStateToProps, { getProgram })(Program);

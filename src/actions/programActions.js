@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_PROGRAMS, GET_ERRORS, GET_PROGRAM, DELETE_PROGRAM, SET_MESSAGE } from "./types"
+import { GET_PROGRAMS, GET_ERRORS, GET_PROGRAM, DELETE_PROGRAM, SET_MESSAGE, PUBLIC_GET_PROGRAMS } from "./types"
 import { COURSE_API_URL } from "../utils/constantVariables"
 
 export const createProgram = (project, history) => async dispatch => {
@@ -26,6 +26,14 @@ export const getPrograms = () => async dispatch => {
     const res = await axios.get(COURSE_API_URL + "/api/v1/programs")
     dispatch({
         type: GET_PROGRAMS,
+        payload: res.data
+    })
+}
+
+export const getPublicPrograms = () => async dispatch => {
+    const res = await axios.get(COURSE_API_URL + "/api/v1/public/programs")
+    dispatch({
+        type: PUBLIC_GET_PROGRAMS,
         payload: res.data
     })
 }

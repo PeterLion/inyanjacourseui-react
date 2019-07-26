@@ -14,17 +14,19 @@ class Header extends Component {
         const userIsAuthenticated = (
             <ul className="navbar-nav">
                 <li className="nav-item dropdown dropdown-menu-left">
-                    <Link className="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link className="dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
         </Link>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <Link to="/dashboard" className="dropdown-item">Dashboard</Link>
-                        <Link to="/progrmas" className="dropdown-item">Programs</Link>
+                        <Link to="/account" className="dropdown-item">Profile</Link>
+                        <Link to="/programs" className="dropdown-item">Programs</Link>
                         <Link to="/topics" className="dropdown-item">Topics</Link>
+                        <Link to="/courses" className="dropdown-item">Courses</Link>
                         <div className="dropdown-divider"></div>
                         <Link to="/logout" onClick={this.logout.bind(this)} className="dropdown-item">Logout</Link>
                     </div>
                 </li>
+                <li className="nav-item"><Link to="/dashboard" className="dropdown-item">Dashboard</Link></li>
             </ul>
         )
         const userIsNotAuthenticated = (

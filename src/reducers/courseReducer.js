@@ -1,8 +1,9 @@
-import { GET_COURSES } from "../actions/types"
+import { GET_COURSES, PUBLIC_GET_COURSES } from "../actions/types"
 
 const initialState = {
     course: {},
-    courses: []
+    courses: [],
+    public_courses: []
 }
 
 export default function (state = initialState, action) {
@@ -11,6 +12,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 courses: action.payload
+            }
+        case PUBLIC_GET_COURSES:
+            return {
+                ...state,
+                public_courses: action.payload
             }
         default:
             return state;

@@ -1,8 +1,9 @@
-import { GET_TOPICS, GET_TOPIC } from "../actions/types"
+import { GET_TOPICS, GET_TOPIC, PUBLIC_GET_TOPICS } from "../actions/types"
 
 const initialState = {
     topic: {},
-    topics: []
+    topics: [],
+    public_topics: []
 }
 
 export default function (state = initialState, action) {
@@ -16,6 +17,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 topic: action.payload
+            }
+        case PUBLIC_GET_TOPICS:
+            return {
+                ...state,
+                public_topics: action.payload
             }
         default:
             return state;

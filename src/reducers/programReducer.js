@@ -1,8 +1,9 @@
-import { GET_PROGRAMS, GET_PROGRAM, DELETE_PROGRAM } from "../actions/types"
+import { GET_PROGRAMS, GET_PROGRAM, DELETE_PROGRAM, PUBLIC_GET_PROGRAMS } from "../actions/types"
 
 const initialState = {
     program: {},
-    programs: []
+    programs: [],
+    public_programs: []
 }
 
 export default function (state = initialState, action) {
@@ -16,6 +17,13 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 program: action.payload
+            }
+        case PUBLIC_GET_PROGRAMS:
+            {
+                return {
+                    ...state,
+                    public_programs: action.payload
+                }
             }
         case DELETE_PROGRAM:
             return {

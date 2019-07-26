@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_COURSES, GET_ERRORS, SET_MESSAGE } from "./types"
+import { GET_COURSES, GET_ERRORS, SET_MESSAGE, PUBLIC_GET_COURSES } from "./types"
 import { COURSE_API_URL } from "../utils/constantVariables"
 
 export const createCourse = (id, Course, history) => async dispatch => {
@@ -26,6 +26,14 @@ export const getCourses = () => async dispatch => {
     const res = await axios.get(COURSE_API_URL + "/api/v1/courses")
     dispatch({
         type: GET_COURSES,
+        payload: res.data
+    })
+}
+
+export const getPublicCourses = () => async dispatch => {
+    const res = await axios.get(COURSE_API_URL + "/api/v1/public/courses")
+    dispatch({
+        type: PUBLIC_GET_COURSES,
         payload: res.data
     })
 }
