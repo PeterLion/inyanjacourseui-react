@@ -20,12 +20,17 @@ import AddTopic from './components/program/AddTopic';
 import Program from './components/program/Program';
 import Landing from "./components/Layout/Landing"
 import About from "./components/Layout/About"
-import Footer from './components/Layout/Footer';
+import Footer from './components/public/Footer';
 import Topics from './components/topic/Topics';
 import Topic from './components/topic/Topic';
 import AddCourse from './components/topic/AddCourse';
 import Courses from './components/course/Courses';
 import Programs from './components/program/Programs';
+import Main from './components/public/Main';
+import Nav from './components/public/Nav';
+import Blog from './components/blog/Blog';
+import "./assets/css/styles.css"
+import QuizForm from './components/quiz/QuizForm';
 
 const jwtToken = localStorage.jwtToken;
 
@@ -44,12 +49,14 @@ function App() {
     <Provider store={store}>
 
       <Router>
+        <Header />
         <div>
-          <Header />
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/about-us" component={About} />
+          <Route exact path="/public" component={Main} />
+          <Route exact />
           <Switch>
             <SecuredRoute exact path="/dashboard" component={Dashboard} />
             <SecuredRoute exact path="/program" component={CreateProgram} />
@@ -61,9 +68,10 @@ function App() {
             <SecuredRoute exact path="/program/:id/addTopic" component={AddTopic} />
             <SecuredRoute exact path="/topics/:id/addCourse" component={AddCourse} />
             <SecuredRoute exact path="/courses" component={Courses} />
+            <SecuredRoute exact path="/addQuiz" component={QuizForm} />
           </Switch>
-          <Footer />
         </div>
+        <Footer />
       </Router>
     </Provider>
   );

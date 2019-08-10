@@ -11,11 +11,9 @@ class UpdateProgram extends Component {
             name: "",
             description: ""
         }
-        this.onChange = this.onChange.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
     }
 
-    onChange(e) {
+    onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
     componentWillReceiveProps(nextProps) {
@@ -26,7 +24,7 @@ class UpdateProgram extends Component {
         const { id } = this.props.match.params
         this.props.getProgram(id, this.props.history)
     }
-    onSubmit(e) {
+    onSubmit = (e) => {
         e.preventDefault()
         const updatedProgram = {
             name: this.state.name,
@@ -37,16 +35,17 @@ class UpdateProgram extends Component {
     }
 
     render() {
+        const { name, description } = this.state
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
-                                <input type="text" name="name" className="form-control form-control-lg" value={this.state.name} onChange={this.onChange} />
+                                <input type="text" name="name" className="form-control form-control-lg" value={name} onChange={this.onChange} />
                             </div>
                             <div className="form-group">
-                                <textarea type="text" name="description" className="form-control form-control-lg" value={this.state.description} onChange={this.onChange} ></textarea>
+                                <textarea type="text" name="description" className="form-control form-control-lg" value={description} onChange={this.onChange} ></textarea>
                             </div>
                             <div className="form-group">
                                 <input type="submit" value="Save Changes" className="btn btn-primary" />

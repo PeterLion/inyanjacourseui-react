@@ -12,15 +12,13 @@ class CreateProgram extends Component {
             description: "",
             errors: {}
         }
-        this.onChange = this.onChange.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
     }
 
-    onChange(e) {
+    onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    onSubmit(e) {
+    onSubmit = (e) => {
         e.preventDefault()
         const newProgram = {
             name: this.state.name,
@@ -29,15 +27,16 @@ class CreateProgram extends Component {
         this.props.createProgram(newProgram, this.props.history)
     }
     render() {
+        const { name, description } = this.state
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 sm-12 lg-6">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
-                                <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.onChange} /></div>
+                                <input type="text" className="form-control" name="name" value={name} onChange={this.onChange} /></div>
                             <div className="form-group">
-                                <textarea name="description" className="form-control" value={this.state.description} onChange={this.onChange}></textarea></div>
+                                <textarea name="description" className="form-control" value={description} onChange={this.onChange}></textarea></div>
                             <div className="form-group">
                                 <input type="submit" className="btn btn-primary" value="Create Program" /></div>
                         </form>
