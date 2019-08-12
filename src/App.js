@@ -20,7 +20,7 @@ import AddTopic from './components/program/AddTopic';
 import Program from './components/program/Program';
 import Landing from "./components/Layout/Landing"
 import About from "./components/Layout/About"
-import Footer from './components/public/Footer';
+import Footer from './components/Layout/Footer';
 import Topics from './components/topic/Topics';
 import Topic from './components/topic/Topic';
 import AddCourse from './components/topic/AddCourse';
@@ -49,7 +49,7 @@ function App() {
     <Provider store={store}>
 
       <Router>
-        <Header />
+        <Nav />
         <div>
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />

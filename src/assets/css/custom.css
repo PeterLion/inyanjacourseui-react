@@ -95,13 +95,14 @@ footer {
         font-size: 40px;
     }
     section {
-        padding: 20px;
+        padding: 0px;
+        margin:0px;
+    }
+    #innerSlider{
+        padding: 0px;
+        margin:0px;
     }
     
-}
-
-.course-card{
-    width: 5px !important;
 }
 
 

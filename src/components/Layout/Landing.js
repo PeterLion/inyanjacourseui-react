@@ -1,27 +1,36 @@
 import React, { Component } from 'react'
 import NewCourses from '../course/newCourses';
+import Slide from './Slider';
+import MultipleCourses from '../course/MultipleCourses';
 
 class Landing extends Component {
     render() {
+        const sliders = [{ name: "Peter" }, { name: "henry" }, { name: "Obi" }]
         return (
-            <div className="container">
-                <div className="row mt-3">
-                    <div className="col-sm-12 col-md-12 col-lg-12">
-                        <div className="jumbotron">
-                            <h1 className="display-4">Hello, world!</h1>
-                            <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                            <hr className="my-4" />
-                            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                            <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <div className="container-fluid p-0">
+                <section className="container-fluid p-0 m-0">
+                    <div className="row">
+                        <div className="col-sm-12 col-md-12 col-lg-12">
+                            <Slide sliders={sliders} />
                         </div>
                     </div>
-                </div>
-                <div className="row mb-3">
-                    <NewCourses />
-                    <NewCourses />
-                    <NewCourses />
-                    <NewCourses />
-                </div>
+                </section>
+                <section className="container-fluid m-0 p-0">
+                    <h2>Most populor courses</h2>
+                    <div className="container-fluid p-0 m-0">
+                        <div className="row p-0 justify-content-center">
+                            <NewCourses />
+                        </div>
+                    </div>
+                </section>
+                <section className="container-fluid m-0 p-0">
+                    <h2>New Courses</h2>
+                    <div className="container-fluid p-0 m-0">
+                        <div className="row p-0 justify-content-center">
+                            <NewCourses />
+                        </div>
+                    </div>
+                </section>
             </div>
         )
     }

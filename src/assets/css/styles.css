@@ -20,6 +20,25 @@ body {
   #showcase{
     padding: 0px;
   }
+
+  .course-card{
+    max-width: 15rem;
+    height: 20rem;
+    background-color: beige;
+  }
+
+  .checked{
+    color: red;
+  }
+
+  .course-card img{
+    max-height: 50%;
+  }
+
+  .course-description{
+    max-height: 3em;
+    overflow: hidden;
+  }
   
   .carousel-image-1 {
     background: url('../../images/new_pub_img/image1.jpg');
@@ -66,7 +85,7 @@ body {
     color: #fff;
   }
   
-  #video-play a {
+  #video-play a { 
     color: #fff;
   }
   
