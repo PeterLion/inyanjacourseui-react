@@ -18,10 +18,11 @@ const Slider = ({ sliders }) => {
                                 <img src={sliderImage} className="d-block" alt="..." />
                                 <div className="container">
                                     <div className="carousel-caption d-sm-block mb-5">
-                                        <h1 className="display-3">Heading Two</h1>
-                                        <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aperiam vel ullam deleniti reiciendis ratione
-                quod aliquid inventore vero perspiciatis.</p>
-                                        <Link to="#" className="btn btn-primary btn-lg">Learn More</Link>
+                                        <h1 className="display-3">{slider.name}</h1>
+                                        <p className="lead">
+                                            {slider.description}
+                                        </p>
+                                        <Link to="#" className="btn btn-primary btn-lg">Enroll Now</Link>
                                     </div>
                                 </div>
                             </div>
@@ -30,10 +31,9 @@ const Slider = ({ sliders }) => {
                                 <img src={sliderImage} className="d-block" alt="..." />
                                 <div className="container">
                                     <div className="carousel-caption d-sm-block mb-5">
-                                        <h1 className="display-3">Heading Two</h1>
-                                        <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aperiam vel ullam deleniti reiciendis ratione
-                quod aliquid inventore vero perspiciatis.</p>
-                                        <Link to="#" className="btn btn-primary btn-lg">Learn More</Link>
+                                        <h1 className="display-3">{slider.name}</h1>
+                                        <p className="lead">{slider.description}</p>
+                                        <Link to="/" className="btn btn-primary btn-lg">Enroll Now</Link>
                                     </div>
                                 </div>
                             </div>

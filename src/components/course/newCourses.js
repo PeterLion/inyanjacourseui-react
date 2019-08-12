@@ -1,23 +1,23 @@
 import React, { Component, Fragment } from 'react'
 import NewCourse from './newCourse';
-import CoursesTabedNav from './coursesTabedNav';
 
-class newCourses extends Component {
-    render() {
-        return (
+const newCourses = ({ courses }) => {
+    return (
 
-            <Fragment>
-                <NewCourse />
-                <NewCourse />
-                <NewCourse />
-                <NewCourse />
-                <NewCourse />
-            </Fragment>
+        <Fragment>
+            {
+                courses && courses.map((course, id) => (
+                    <NewCourse key={id} course={course} />
+                ))
+            }
 
+        </Fragment>
 
 
-        )
-    }
+
+    )
 }
+
+
 
 export default newCourses;
