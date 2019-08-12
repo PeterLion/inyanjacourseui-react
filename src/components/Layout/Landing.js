@@ -16,7 +16,7 @@ class Landing extends Component {
                     </div>
                 </section>
                 <section className="container-fluid m-0 p-0">
-                    <h2>Most populor courses</h2>
+                    <h2 className="text-left">Most populor courses</h2>
                     <div className="container-fluid p-0 m-0">
                         <div className="row p-0 justify-content-center">
                             <NewCourses />
@@ -24,7 +24,7 @@ class Landing extends Component {
                     </div>
                 </section>
                 <section className="container-fluid m-0 p-0">
-                    <h2>New Courses</h2>
+                    <h2 className="text-left">New Courses</h2>
                     <div className="container-fluid p-0 m-0">
                         <div className="row p-0 justify-content-center">
                             <NewCourses />
