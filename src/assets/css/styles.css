@@ -22,7 +22,7 @@ body {
   }
 
   .course-card{
-    width: 15rem;
+    max-width: 16rem;
     height: 16rem;
     background-color: beige;
     border-radius: 0px;

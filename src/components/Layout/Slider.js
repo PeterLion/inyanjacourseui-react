@@ -8,6 +8,7 @@ const Slider = ({ sliders }) => {
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
             <div className="carousel-inner">
 
@@ -33,7 +34,7 @@ const Slider = ({ sliders }) => {
                                     <div className="carousel-caption d-sm-block mb-5">
                                         <h1 className="display-3">{slider.name}</h1>
                                         <p className="lead">{slider.description}</p>
-                                        <Link to="/" className="btn btn-primary btn-lg">Enroll Now</Link>
+                                        <Link to={`/enroll/${slider.id}`} className="btn btn-primary btn-lg">Enroll Now</Link>
                                     </div>
                                 </div>
                             </div>
