@@ -23,13 +23,19 @@ body {
 
   .course-card{
     max-width: 16rem;
-    height: 16rem;
+    height: 20rem;
     background-color: beige;
     border-radius: 0px;
     
   }
   .course-card:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  .course-button{
+    border-radius: 0px;
+    background-color: lightslategrey;
+    border: 1px solid #fff
   }
 
   .checked{

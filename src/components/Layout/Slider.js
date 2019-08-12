@@ -13,32 +13,36 @@ const Slider = ({ sliders }) => {
             <div className="carousel-inner">
 
                 {
-                    sliders.map((slider, id) => (
-                        id === 0 ?
-                            <div key={id} className="carousel-item active">
-                                <img src={sliderImage} className="d-block" alt="..." />
-                                <div className="container">
-                                    <div className="carousel-caption d-sm-block mb-5">
-                                        <h1 className="display-3">{slider.name}</h1>
-                                        <p className="lead">
-                                            {slider.description}
-                                        </p>
-                                        <Link to="#" className="btn btn-primary btn-lg">Enroll Now</Link>
+                    sliders.map((slider, id) => {
+                        if (id <= 3) {
+                            return (id === 0 ?
+                                <div key={id} className="carousel-item active">
+                                    <img src={sliderImage} className="d-block" alt="..." />
+                                    <div className="container">
+                                        <div className="carousel-caption d-sm-block mb-5">
+                                            <h1 className="display-3">{slider.name}</h1>
+                                            <p className="lead">
+                                                {slider.description}
+                                            </p>
+                                            <Link to="#" className="btn btn-primary btn-lg">Enroll Now</Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            :
-                            <div key={id} className="carousel-item">
-                                <img src={sliderImage} className="d-block" alt="..." />
-                                <div className="container">
-                                    <div className="carousel-caption d-sm-block mb-5">
-                                        <h1 className="display-3">{slider.name}</h1>
-                                        <p className="lead">{slider.description}</p>
-                                        <Link to={`/enroll/${slider.id}`} className="btn btn-primary btn-lg">Enroll Now</Link>
+                                :
+                                <div key={id} className="carousel-item">
+                                    <img src={sliderImage} className="d-block" alt="..." />
+                                    <div className="container">
+                                        <div className="carousel-caption d-sm-block mb-5">
+                                            <h1 className="display-3">{slider.name}</h1>
+                                            <p className="lead">{slider.description}</p>
+                                            <Link to={`/enroll/${slider.id}`} className="btn btn-primary btn-lg">Enroll Now</Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                    ))
+                            )
+                        }
+
+                    })
                 }
             </div>
             <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
