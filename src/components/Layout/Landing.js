@@ -20,18 +20,20 @@ class Landing extends Component {
                         </div>
                     </div>
                 </section>
-                <section className="container-fluid m-0 p-0">
-                    <h2 className="text-left">Most populor courses</h2>
-                    <div className="container-fluid p-0 m-0">
-                        <div className="row p-0">
+                <section className="container pb-2 pt-2">
+                    
+                    <div className="container">
+                    <h1 className="lead text-left">Most populor courses</h1>
+                        <div className="row">
                             < NewCourses courses={public_courses} />
                         </div>
                     </div>
                 </section>
-                <section className="container-fluid m-0 p-0">
-                    <h2 className="text-left">New Courses</h2>
-                    <div className="container-fluid p-0 m-0">
-                        <div className="row p-0">
+                <section className="container pt-0">
+                    
+                    <div className="container">
+                    <h1 className="lead text-left">New Courses</h1>
+                        <div className="row">
                             <NewCourses courses={public_courses} />
                         </div>
                     </div>
