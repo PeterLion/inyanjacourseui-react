@@ -43,7 +43,7 @@ export const getCourse = (course_id, history) => async dispatch => {
 }
 
 export const getNewCourses = () => async dispatch => {
-    const res = await axios.get(COURSE_API_URL + "/api/v1/courses/newCourses")
+    const res = await axios.get(COURSE_API_URL + "/api/v1/public/courses/newCourses")
     dispatch({
         type: GET_NEW_COURSES,
         payload: res.data
