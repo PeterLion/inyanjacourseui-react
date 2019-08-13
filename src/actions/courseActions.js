@@ -32,7 +32,7 @@ export const getCourses = () => async dispatch => {
 
 export const getCourse = (course_id, history) => async dispatch => {
     try {
-        const res = await axios.get(COURSE_API_URL + `/api/v1/courses/course/${course_id}`)
+        const res = await axios.get(COURSE_API_URL + `/api/v1/public/courses/course/${course_id}`)
         dispatch({
             type: GET_COURSE,
             payload: res.data
@@ -51,7 +51,7 @@ export const getNewCourses = () => async dispatch => {
 }
 
 export const getFeaturedCourses = () => async dispatch => {
-    const res = await axios.get(COURSE_API_URL + "/api/v1/courses/featuredCourses")
+    const res = await axios.get(COURSE_API_URL + "/api/v1/public/courses/featuredCourses")
     dispatch({
         type: GET_FEATURED_COURSES,
         payload: res.data
