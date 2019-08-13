@@ -1,6 +1,11 @@
 body {
     overflow-x: hidden;
   }
+
+  .content{
+    position: relative;
+    min-height: 70vh !important;
+  }
   
   .navbar .nav-link {
     font-size: 14px;
