@@ -5,7 +5,7 @@ import { getCourse } from "../../actions/courseActions"
 class ViewCourse extends Component {
     componentDidMount() {
         const { course_id } = this.props.match.params
-        this.props.getCourse(course_id)
+        this.props.getCourse(course_id, this.props.history)
     }
     render() {
         const { course } = this.props.course

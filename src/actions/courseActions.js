@@ -30,12 +30,16 @@ export const getCourses = () => async dispatch => {
     })
 }
 
-export const getCourse = (course_id) => async dispatch => {
-    const res = await axios.get(COURSE_API_URL + `/api/v1/courses/course/${course_id}`)
-    dispatch({
-        type: GET_COURSE,
-        payload: res.data
-    })
+export const getCourse = (course_id, history) => async dispatch => {
+    try {
+        const res = await axios.get(COURSE_API_URL + `/api/v1/courses/course/${course_id}`)
+        dispatch({
+            type: GET_COURSE,
+            payload: res.data
+        })
+    } catch (error) {
+        history.push("/")
+    }
 }
 
 export const getNewCourses = () => async dispatch => {
