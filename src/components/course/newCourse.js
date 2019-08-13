@@ -22,7 +22,7 @@ const newCourse = ({ course }) => {
                     <span className="card-link ml-2">4.2(250)</span>
                 </div>
                 <div className="card-body m-1 p-0 text-center">
-                <Link to="/" className="course-button card-link btn btn-primary">View Course</Link>
+                    <Link to={`/course/${course.id}`} className="course-button card-link btn btn-primary">View Course</Link>
                     <span to="/" className="card-link">$15.00</span>
                 </div>
             </div>

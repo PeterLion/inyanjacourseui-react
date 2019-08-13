@@ -3,38 +3,42 @@ import NewCourses from '../course/newCourses';
 import Slide from './Slider';
 import { connect } from "react-redux"
 import PropTypes from 'prop-types'
-import { getPublicCourses } from "../../actions/courseActions"
+import { getPublicCourses, getNewCourses, getFeaturedCourses } from "../../actions/courseActions"
 class Landing extends Component {
     componentDidMount() {
         this.props.getPublicCourses()
+        this.props.getNewCourses()
+        this.props.getFeaturedCourses()
     }
     render() {
         const sliders = [{ name: "Peter" }, { name: "henry" }, { name: "Obi" }]
         const { public_courses } = this.props.course
+        const { new_courses } = this.props.course
+        const { featured_courses } = this.props.course
         return (
             <div className="container-fluid p-0">
                 <section className="container-fluid p-0 m-0">
                     <div className="row">
                         <div className="col-sm-12 col-md-12 col-lg-12">
-                            <Slide sliders={public_courses} />
+                            <Slide sliders={featured_courses} />
                         </div>
                     </div>
                 </section>
                 <section className="container pb-2 pt-2">
-                    
+
                     <div className="container">
-                    <h1 className="lead text-left">Most populor courses</h1>
+                        <h1 className="lead text-left">Most populor courses</h1>
                         <div className="row">
                             < NewCourses courses={public_courses} />
                         </div>
                     </div>
                 </section>
                 <section className="container pt-0">
-                    
+
                     <div className="container">
-                    <h1 className="lead text-left">New Courses</h1>
+                        <h1 className="lead text-left">New Courses</h1>
                         <div className="row">
-                            <NewCourses courses={public_courses} />
+                            <NewCourses courses={new_courses} />
                         </div>
                     </div>
                 </section>
@@ -44,9 +48,11 @@ class Landing extends Component {
 }
 
 Landing.propTypes = {
-    getPublicCourses: PropTypes.func.isRequired
+    getPublicCourses: PropTypes.func.isRequired,
+    getNewCourses: PropTypes.func.isRequired,
+    getFeaturedCourses: PropTypes.func.isRequired
 }
 const mapStateToState = state => ({
     course: state.course
 })
-export default connect(mapStateToState, { getPublicCourses })(Landing);
+export default connect(mapStateToState, { getPublicCourses, getNewCourses, getFeaturedCourses })(Landing);

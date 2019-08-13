@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_COURSES, GET_ERRORS, SET_MESSAGE, PUBLIC_GET_COURSES } from "./types"
+import { GET_COURSES, GET_ERRORS, SET_MESSAGE, PUBLIC_GET_COURSES, GET_NEW_COURSES, GET_FEATURED_COURSES, GET_COURSE } from "./types"
 import { COURSE_API_URL } from "../utils/constantVariables"
 
 export const createCourse = (id, Course, history) => async dispatch => {
@@ -29,6 +29,31 @@ export const getCourses = () => async dispatch => {
         payload: res.data
     })
 }
+
+export const getCourse = (course_id) => async dispatch => {
+    const res = await axios.get(COURSE_API_URL + `/api/v1/courses//course/${course_id}`)
+    dispatch({
+        type: GET_COURSE,
+        payload: res.data
+    })
+}
+
+export const getNewCourses = () => async dispatch => {
+    const res = await axios.get(COURSE_API_URL + "/api/v1/courses/newCourses")
+    dispatch({
+        type: GET_NEW_COURSES,
+        payload: res.data
+    })
+}
+
+export const getFeaturedCourses = () => async dispatch => {
+    const res = await axios.get(COURSE_API_URL + "/api/v1/courses/featuredCourses")
+    dispatch({
+        type: GET_FEATURED_COURSES,
+        payload: res.data
+    })
+}
+
 
 export const getPublicCourses = () => async dispatch => {
     const res = await axios.get(COURSE_API_URL + "/api/v1/public/courses")

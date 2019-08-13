@@ -31,6 +31,7 @@ import Nav from './components/public/Nav';
 import Blog from './components/blog/Blog';
 import "./assets/css/styles.css"
 import QuizForm from './components/quiz/QuizForm';
+import ViewCourse from './components/course/ViewCourse';
 
 const jwtToken = localStorage.jwtToken;
 
@@ -56,6 +57,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/about-us" component={About} />
           <Route exact path="/public" component={Main} />
+          <Route exact path="/course/:course_id" component={ViewCourse} />
           <Route exact />
           <Switch>
             <SecuredRoute exact path="/dashboard" component={Dashboard} />
