@@ -38,30 +38,42 @@ class Register extends Component {
         this.props.createUser(newUser, this.props.history)
     }
     render() {
+        const { name, email, password } = this.state
         return (
             <div className="container">
-                <div className="page-header">
-                    <p className="lead">Welcome</p>
-                </div>
-                <div className="row d-flex justify-content-center">
-                    <div className="col-md-6">
-                        <form onSubmit={this.onSubmit}>
-                            <div className="form-group">
-                                <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.onChange} />
+                <div className="row">
+                    <div className="col-lg-6 col-xl-6 mx-auto">
+                        <div className="card card-signin flex-row my-5">
+                            <div className="card-img-left d-none d-md-flex">
                             </div>
-                            <div className="form-group">
-                                <input type="text" className="form-control" name="email" value={this.state.email} onChange={this.onChange} />
+                            <div className="card-body">
+                                <h5 className="card-title text-center">Register</h5>
+                                <form className="form-signin" onSubmit={this.onSubmit}>
+                                    <div className="form-group">
+                                        <label htmlFor="inputUserame">Your name</label>
+                                        <input type="text" name="name" id="inputUserame" value={name} onChange={this.onChange} className="form-control" placeholder="Username" required autoFocus />
+
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="inputEmail">Email address</label>
+                                        <input type="email" name="email" id="inputEmail" value={email} onChange={this.onChange} className="form-control" placeholder="Email address" required />
+
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="inputPassword">Password</label>
+                                        <input type="password" name="password" id="inputPassword" value={password} onChange={this.onChange} className="form-control" placeholder="Password" required />
+
+                                    </div>
+                                    <div className="form-group">
+                                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div className="form-group">
-                                <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.onChange} />
-                            </div>
-                            <div className="form-group">
-                                <input type="submit" className="btn btn-primary" value="Register" />
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-
             </div>
         )
     }

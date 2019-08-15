@@ -19,7 +19,7 @@ const Slider = ({ sliders }) => {
                                 <div key={id} className="carousel-item active">
                                     <img src={sliderImage} className="d-block" alt="..." />
                                     <div className="container">
-                                        <div className="carousel-caption d-sm-block mb-5">
+                                        <div className="carousel-caption d-none d-sm-block mb-5">
                                             <h1 className="display-3">{slider.name}</h1>
                                             <p className="lead">
                                                 {slider.description}

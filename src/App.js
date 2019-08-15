@@ -30,8 +30,10 @@ import Main from './components/public/Main';
 import Nav from './components/public/Nav';
 import Blog from './components/blog/Blog';
 import "./assets/css/styles.css"
+import "./assets/css/user_styles.css"
 import QuizForm from './components/quiz/QuizForm';
 import ViewCourse from './components/course/ViewCourse';
+import ProgramCourses from './components/program/ProgramCourses';
 
 const jwtToken = localStorage.jwtToken;
 
@@ -50,7 +52,7 @@ function App() {
     <Provider store={store}>
 
       <Router>
-        <Nav />
+        <Header />
         <div>
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
@@ -58,7 +60,7 @@ function App() {
           <Route exact path="/about-us" component={About} />
           <Route exact path="/public" component={Main} />
           <Route exact path="/course/:course_id" component={ViewCourse} />
-          <Route exact />
+          <Route exact path="/:id/:name" component={ProgramCourses} />
           <Switch>
             <SecuredRoute exact path="/dashboard" component={Dashboard} />
             <SecuredRoute exact path="/program" component={CreateProgram} />

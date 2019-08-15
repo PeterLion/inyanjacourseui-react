@@ -44,29 +44,35 @@ class Login extends Component {
         this.props.login(loginRequest)
     }
     render() {
-        const { errors } = this.state
+        const { errors, email, password } = this.state
         return (
             <div className="container">
-                <div className="page-header">
-                    <p className="lead">Welcome</p>
-                </div>
-                <div className="row d-flex justify-content-center">
-                    <div className="col-md-6">
-                        <form onSubmit={this.onSubmit}>
-                            <div className="form-group">
-                                <input className={classnames("form-control", { "is-invalid": errors.emailError })} type="text" name="email" value={this.state.email} onChange={this.onChange} />
-                                {errors.emailError && (
-                                    <div className="invalid-feedback">{errors.emailError}</div>
-                                )}
+                <div className="row">
+                    <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                        <div className="card card-signin my-5">
+                            <div className="card-body">
+                                <h5 className="card-title text-center">Sign In</h5>
+                                <form className="form-signin" onSubmit={this.onSubmit}>
+                                    <div className="form-group">
+                                        <label htmlFor="inputEmail">Email address</label>
+                                        <input type="email" name="email" value={email} onChange={this.onChange} id="inputEmail" className="form-control" placeholder="Email address" required autoFocus />
+
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="inputPassword">Password</label>
+                                        <input type="password" name="password" value={password} onChange={this.onChange} id="inputPassword" className="form-control" placeholder="Password" required />
+
+                                    </div>
+                                    <div className="form-group">
+                                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                                    </div>
+
+                                </form>
                             </div>
-                            <div className="form-group">
-                                <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.onChange} /></div>
-                            <div className="form-group m-auto">
-                                <input className="btn btn-primary" type="submit" value="Login" /></div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-
             </div>
         )
     }
