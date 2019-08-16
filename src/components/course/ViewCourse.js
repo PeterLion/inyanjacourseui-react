@@ -15,12 +15,10 @@ class ViewCourse extends Component {
         return (
             <div className="container content pt-4">
                 <CourseBreadcrumb course={course} />
-                <div className="jumbotron mb-4 pt-0 mt-0 p-3 p-md-5 text-white rounded bg-dark">
-                    <div className="col-xs-12 col-sm-12 col-md-12 p-3">
-                        <h1 className="display-4 font-italic">{course.name}</h1>
-                        <p className="lead my-3">{course.description}</p>
-                        <Link className="btn btn-primary btn-lg float-right" to="/" role="button">Enroll Now</Link>
-                    </div>
+                <div className="jumbotron">
+                    <h1 className="display-4">{course.name}</h1>
+                    <p>{course.description}</p>
+                    <Link className="btn btn-primary btn-lg push-right align-right" to={`/enroll/${course.id}`} role="button">Enroll Now</Link>
                 </div>
                 <CourseTabs course={course} />
             </div>
