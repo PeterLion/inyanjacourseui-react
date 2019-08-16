@@ -1,24 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class coursesTabedNav extends Component {
-    render() {
-        return (
-            <ul className="nav nav-tabs">
-                <li className="nav-item">
-                    <a className="nav-link active" href="#">Active</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-        )
-    }
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
+
+const CourseTabs = ({ course }) => {
+    return (
+        <Tabs>
+            <TabList>
+                <Tab>About the course</Tab>
+                <Tab>Course Content</Tab>
+                <Tab>Course Forum</Tab>
+            </TabList>
+
+            <TabPanel>
+                <h1>{course.description}</h1>
+            </TabPanel>
+            <TabPanel>
+                <h1>Chapiters and sections</h1>
+            </TabPanel>
+            <TabPanel>
+                <h1>Question and announcements</h1>
+            </TabPanel>
+        </Tabs>
+    )
+
 }
 
-export default coursesTabedNav;
+export default CourseTabs;
