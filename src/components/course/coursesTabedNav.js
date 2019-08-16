@@ -2,8 +2,10 @@ import React from 'react'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
+import CourseChapiters from './CourseChapiter';
 
 const CourseTabs = ({ course }) => {
+    const chapiters = [{ name: '', content: '' }, { name: '', content: '' }, { name: '', content: '' }]
     return (
         <Tabs>
             <TabList>
@@ -16,7 +18,7 @@ const CourseTabs = ({ course }) => {
                 <h1>{course.description}</h1>
             </TabPanel>
             <TabPanel>
-                <h1>Chapiters and sections</h1>
+                <h1><CourseChapiters /></h1>
             </TabPanel>
             <TabPanel>
                 <h1>Question and announcements</h1>
