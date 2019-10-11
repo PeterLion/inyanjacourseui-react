@@ -5,6 +5,7 @@ import { getCourse } from "../../actions/courseActions"
 import CourseBreadcrumb from '../Layout/Breadcrumb';
 import CourseTabs from './coursesTabedNav';
 import { Link } from 'react-router-dom'
+import SearchCourse from './SearchCourse';
 class ViewCourse extends Component {
     componentDidMount() {
         const { course_id } = this.props.match.params

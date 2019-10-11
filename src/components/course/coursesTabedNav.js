@@ -15,7 +15,10 @@ const CourseTabs = ({ course }) => {
             </TabList>
 
             <TabPanel>
-                <h1>{course.description}</h1>
+                <div className="container"><h1 className="lead">{course.description}</h1>
+
+                </div>
+
             </TabPanel>
             <TabPanel>
                 <h1><CourseChapiters chapiters={chapiters} /></h1>

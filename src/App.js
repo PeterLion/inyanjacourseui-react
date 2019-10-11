@@ -33,6 +33,9 @@ import "./assets/css/styles.css"
 import "./assets/css/user_styles.css"
 import QuizForm from './components/quiz/QuizForm';
 import ViewCourse from './components/course/ViewCourse';
+import Navigation from './components/New/Nav';
+import Maindashboard from './components/New/Main';
+import QuizExam from './components/New/QuizExam';
 
 const jwtToken = localStorage.jwtToken;
 
@@ -59,6 +62,9 @@ function App() {
           <Route exact path="/about-us" component={About} />
           <Route exact path="/public" component={Main} />
           <Route exact path="/course/:course_id" component={ViewCourse} />
+          <Route exact path="/new" component={Maindashboard} />
+          <Route exact path="/react-test" component={QuizExam} />
+
           <Switch>
             <SecuredRoute exact path="/dashboard" component={Dashboard} />
             <SecuredRoute exact path="/program" component={CreateProgram} />
